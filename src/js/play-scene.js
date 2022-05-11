@@ -145,7 +145,6 @@ class PlayScene extends Phaser.Scene {
 
     // play scenens update metod
     update() {
-        slowDown -= 0.05;
 
         // för pause
         if (this.keyObj.isDown) {
@@ -199,7 +198,7 @@ class PlayScene extends Phaser.Scene {
             // otherwise, make them face the other side
             this.player.setFlipX(true);
         }
-        this.player.body.setVelocityX(this.player.body.velocity.x * slowDown);
+        this.player.body.setVelocityX(this.player.body.velocity.x);
     }
 
 
@@ -231,7 +230,6 @@ class PlayScene extends Phaser.Scene {
 
     collectChoco(player, hotchoco) {
         hotchoco.disableBody(true, true);
-        slowDown = 0.93;
     }
 
     // när vi skapar scenen så körs initAnims för att ladda spelarens animationer
